@@ -1,8 +1,10 @@
 # Canvas
 
-**Canvas** é um elemento HTML utilizado para **representar** forma **geométricas** simples. É semelhante ao elemento img, entretanto, apenas possui os atributos **width** e **height**. O canvas **suporta** apenas a forma **retângulo**, sendo assim, todas as outras são criadas a partir de uma combinação de um ou mais caminhos (paths).
+**Canvas** é um elemento HTML utilizado para **desenhar** gráficos e animações. Ele apenas possui os atributos **width** e **height**. 
 
-Assim como a maioria dos elementos HTML, o **canvas** pode conter **margem**, **borda** e **cor de fundo**, entretanto, essas propriedades não afetam a forma geométrica interna.
+O canvas **suporta** apenas a forma geométrica **retângulo**, sendo assim, todas as outras formas geométricas são criadas a partir de uma combinação de uma ou mais formas.
+
+Assim como a maioria dos elementos HTML, o **canvas** pode conter **margem**, **borda** e **cor de fundo**, entretanto, essas propriedades não afetam a forma geométrica interna. Além disso, é prefível definir sua largura e altura diretamente no elemento html. Caso isto seja feito através de CSS, a imagem pode chegar a distorcer.
 
 ## Conteúdo alternativo
 
@@ -21,8 +23,8 @@ O contexto de renderização consiste na definição **dimensional** da forma qu
 
 Exemplo
 ```js
-const canvasName = document.getElementById('identificador')
+const canvas = document.getElementById('canvas')
 const canvasContext = canvas.getContext('2d')
 ```
 
-Primeiro devemos **selecionar** o elemento **canvas** na árvore DOM. Depois, definimos seu contexto usando o método **getContext()**.
+Primeiro devemos **selecionar** o elemento **canvas**. Depois, definimos seu contexto usando o método **getContext()**.
