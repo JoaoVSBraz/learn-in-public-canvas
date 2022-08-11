@@ -28,3 +28,41 @@ const canvasContext = canvas.getContext('2d')
 ```
 
 Primeiro devemos **selecionar** o elemento **canvas**. Depois, definimos seu contexto usando o método **getContext()**.
+
+## Rectangle shapes
+
+There are three ways to draw rectangles using Canvas API, through `fillRect()`, `strokeRect()` and `clearRect()`. These three functions expects 4 parameters: x, y, width and height. The first two parameters are coordinates that refers to the x position and y position at the cartesian plane. These two parameters are relative by default to the top left corner of the canvas. The last two parameters, refers to shapes width and height.
+
+### fillRect()
+
+The `fillRect()` function creates a rectangle shape with it's background filled by default.
+
+Example
+```js
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
+
+ctx.fillRect(10, 10, 50, 50);
+```
+
+### strokeRect()
+
+The `strokeRect()` function creates a rectangle without background and only with border.
+
+```js
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
+
+ctx.strokeRect(10, 10, 50, 50);
+```
+
+### clearRect()
+
+The `clearRect()` function clears the rectangle's background.
+
+```js
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
+
+ctx.clearRect(15, 15, 40, 40);
+```
