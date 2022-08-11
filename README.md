@@ -1,39 +1,41 @@
 # Canvas
 
-**Canvas** é um elemento HTML utilizado para **desenhar** gráficos e animações. Ele apenas possui os atributos **width** e **height**. 
+Canvas it is an HTML element used to draw shapes, animations and graphics. It is similar to the `img` tag with only the diference that it has no `src` and `alt` attributes. Its main attributes are `width` and `height`.
 
-O canvas **suporta** apenas a forma geométrica **retângulo**, sendo assim, todas as outras formas geométricas são criadas a partir de uma combinação de uma ou mais formas.
+Canvas only supports two primitive shapes: rectangles and paths (lists of points connected by lines).
 
-Assim como a maioria dos elementos HTML, o **canvas** pode conter **margem**, **borda** e **cor de fundo**, entretanto, essas propriedades não afetam a forma geométrica interna. Além disso, é prefível definir sua largura e altura diretamente no elemento html. Caso isto seja feito através de CSS, a imagem pode chegar a distorcer.
+Like major HTML elements, canvas can contain `margin`, `border` and `background`, however, this properties do not affect the shapes within the canvas. Moreover, is preferable to set `width` and `height` directly in the HTML element. If these properties are applied through CSS, the canvas will be distorted.
 
-## Conteúdo alternativo
+## Fallback content
 
 Navegadores antigos podem não suportar o canvas, dessa forma, há como informar um **conteúdo alternativo** que será exibido quando o elemento não puder ser renderizado. Este conteúdo alternativo, deve ser **inserido entre a tag de abertura e fechamento** do canvas.
 
-Exemplo
+Older browsers may not support canvas, therefore, to display some content if the the browser cannot load the canvas is a good choice.
+
+Example
 ```html
-<canvas id='identificador' width='150' height='150'>
-    Conteúdo alternativo aqui
+<canvas id='canvas' width='150' height='150'>
+    Fallback content
 </canvas>
 ```
 
-## Contexto de renderização
+## Rendering context
 
-O contexto de renderização consiste na definição **dimensional** da forma que desejamos exibir, podendo ser **2d** ou **3d**. Vejamos abaixo como utilizar o contexto de renderização.
+The rendering context consists to set dimensions of the shapes we want. There are two contexts: `2d` and `3d`.
 
-Exemplo
+Example
 ```js
-const canvas = document.getElementById('canvas')
-const canvasContext = canvas.getContext('2d')
+const canvas = document.querySelector('#canvas')
+const ctx = canvas.getContext('2d')
 ```
 
-Primeiro devemos **selecionar** o elemento **canvas**. Depois, definimos seu contexto usando o método **getContext()**.
+Firstly we must select the canvas element. After, we set its context using the `getContext()` method.
 
 ## Rectangle shapes
 
 There are three ways to draw rectangles using Canvas API, through `fillRect()`, `strokeRect()` and `clearRect()`. These three functions expects 4 parameters: x, y, width and height. The first two parameters are coordinates that refers to the x position and y position at the cartesian plane. These two parameters are relative by default to the top left corner of the canvas. The last two parameters, refers to shapes width and height.
 
-### fillRect()
+### Basic rectangle
 
 The `fillRect()` function creates a rectangle shape with it's background filled by default.
 
@@ -45,7 +47,7 @@ const ctx = canvas.getContext('2d');
 ctx.fillRect(10, 10, 50, 50);
 ```
 
-### strokeRect()
+### Transparent rectangle
 
 The `strokeRect()` function creates a rectangle without background and only with border.
 
@@ -56,7 +58,7 @@ const ctx = canvas.getContext('2d');
 ctx.strokeRect(10, 10, 50, 50);
 ```
 
-### clearRect()
+### Clearing shapes background
 
 The `clearRect()` function clears the rectangle's background.
 
